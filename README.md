@@ -30,8 +30,8 @@ A web application that helps you gather a shopping list for multiple cocktails. 
 
 1. Clone the repository:
 ```bash
-git clone <repo-url>
-cd test-cocktail-assistant
+git clone https://github.com/sonjayilmaz/Cocktail-Assistant-app.git
+cd Cocktail-Assistant-app
 ```
 
 2. Install dependencies:
