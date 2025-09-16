@@ -4,8 +4,8 @@
   "description": "A web app to help you gather a shopping list for multiple cocktails",
   "main": "index.html",
   "scripts": {
-    "start": "npx http-server . -p 3000 -o",
-    "dev": "npx http-server . -p 3000 -o"
+    "start": "http-server . -p 3000 -o -c-1",
+    "dev": "http-server . -p 3000 -o -c-1"
   },
   "dependencies": {
     "haunted": "^4.8.3",
@@ -14,7 +14,12 @@
   "devDependencies": {
     "http-server": "^14.1.1"
   },
-  "keywords": ["cocktails", "shopping-list", "web-components", "haunted"],
+  "keywords": [
+    "cocktails",
+    "shopping-list",
+    "web-components",
+    "haunted"
+  ],
   "author": "",
   "license": "MIT"
 }
