@@ -142,4 +142,4 @@ vite.config.ts.timestamp-*
 dns-store
 dns-store.json
 .dns-store/
-
+.DS_Store
