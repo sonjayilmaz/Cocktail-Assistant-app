@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocktail Assistant</title>
+    <title>Cocktail 🍸 Assistant</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="background">
         <div class="blur-overlay"></div>
     </div>
-    
+
     <div class="app-container">
         <header class="header">
             <h1 class="title">
-                <span class="cocktail-icon">Cocktail&nbsp;<img src="./assets/logo-cocktail.png" alt="logo-cocktail-icon" width="50" height="75"/>&nbsp;Assistant</span>
+                <span class="cocktail-icon">Cocktail&nbsp;<img src="./assets/logo-cocktail.png" alt="logo-cocktail-icon"
+                        width="50" height="75" />&nbsp;Assistant</span>
             </h1>
         </header>
         <div class="intro-section-wrapper">
-        <div class="intro-section">
-            <h2 class="intro-title">Find a drink, build a smart list and get shaking 🍸</h2>
-            <p class="intro-description">
-                Turn any cocktail search into a clean and deduplicated shopping list you can print in one click.<br>
-                Browse classics or discover something new - your ingredients stay organized across every recipe.
-            </p>
+            <div class="intro-section">
+                <h2 class="intro-title">Find a drink, build a smart list and get shaking 🍸</h2>
+                <p class="intro-description">
+                    Turn any cocktail search into a clean and deduplicated shopping list you can print in one click.<br>
+                    Browse classics or discover something new - your ingredients stay organized across every recipe.
+                </p>
+            </div>
         </div>
-         </div>
-        <div id="component-container"></div>
-    </div>
-    
-  <script type="importmap">
+        <div class="content">
+            <div id="component-container"></div>
+        </div>
+
+        <script type="importmap">
   {
     "imports": {
       "lit-html": "./node_modules/lit-html/lit-html.js",
@@ -41,6 +45,7 @@
   }
   </script>
 
-  <script type="module" src="./app.js"></script>
+        <script type="module" src="./app.js"></script>
 </body>
+
 </html>
