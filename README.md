@@ -1,5 +1,7 @@
 # Cocktail Assistant 🍸
 
+🚧 Work in Progress — styling and features evolving.
+
 A web application that helps you gather a shopping list for multiple cocktails. Search for cocktails, add them to your list, and get a deduplicated shopping list that you can print.
 
 ## Features

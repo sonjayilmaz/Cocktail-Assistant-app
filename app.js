@@ -1,4 +1,5 @@
-import { component, html, useState, useMemo, useEffect } from "haunted";
+import { html } from 'lit-html';
+import { component, useState, useMemo, useEffect } from 'haunted';
 
 const API_SEARCH = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
