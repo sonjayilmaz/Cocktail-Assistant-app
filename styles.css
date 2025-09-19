@@ -259,6 +259,27 @@ body {
   background: var(--accent-2)
 }
 
+.clear-btn {
+  margin-left: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 9999px;
+  background: #b22222; /* dark red */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #d93030;
+}
+
+.clear-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+
 
 .toaster {
   position: fixed;

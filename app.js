@@ -1,4 +1,4 @@
-import { component, html, useState, useMemo } from "haunted";
+import { component, html, useState, useMemo, useEffect } from "haunted";
 
 const API_SEARCH = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
@@ -22,12 +22,25 @@ function CocktailAssistant() {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [toast, setToast] = useState("");
-    const [cart, setCart] = useState([]);
+
+    const [cart, setCart] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    } catch {
+      return [];
+    }
+  });
+
+  // save cart to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
     const cartSet = useMemo(
-        () => new Set(cart.map((i) => i.ingredient.toLowerCase())),
-        [cart]
-    );
+    () => new Set(cart.map((i) => i.ingredient.toLowerCase())),
+    [cart]
+  );
+
 
     function showToast(msg, ms = 1600) {
         setToast(msg);
@@ -90,6 +103,10 @@ function CocktailAssistant() {
         setCart(next);
         showToast("Ingredient removed from shopping list.");
     }
+  function clearCart() {
+    setCart([]);
+    showToast("All ingredients cleared.");
+  }
 
     function printList() {
         window.print();
@@ -166,6 +183,7 @@ function CocktailAssistant() {
             )}
             </ul>
           `}
+          <div class="shopping-actions">
       <button
         class="print-btn"
         @click=${printList}
@@ -173,8 +191,18 @@ function CocktailAssistant() {
       >
         Print
       </button>
+       <button
+        class="clear-btn"
+        @click=${clearCart}
+        ?disabled=${cart.length === 0}
+      >
+        Clear All
+      </button>
+    </div>
     </aside>
   `;
+
+  
 
     const Toast = toast
         ? html`<div class="toaster" role="status">${toast}</div>`
